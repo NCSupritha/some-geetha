@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_play"
+        android:title="@string/play" />
+    <item
+        android:id="@+id/action_play_next"
+        android:title="@string/play_next" />
+    <item
+        android:id="@+id/action_add_to_playlist"
+        android:title="@string/add_to_current_playlist" />
+    <item
+        android:id="@+id/action_add_to_list"
+        android:title="@string/add_to_playlist"
+        android:visible="false" /> <!-- visible only for songs -->
+    <item
+        android:id="@+id/action_manage_libraries"
+        android:title="@string/manage_libraries"
+        android:visible="false" /> <!-- visible only for songs -->
+    <item
+        android:id="@+id/action_remove_from_list"
+        android:title="@string/remove_from_list"
+        android:visible="false" /> <!-- visible only for songs in playlist -->
+    <item
+        android:id="@+id/action_remove_from_library"
+        android:title="@string/remove"
+        android:visible="false" /> <!-- visible only for playlists -->
+    <item
+        android:id="@+id/action_explore"
+        android:title="@string/explore"
+        android:visible="false" /> <!-- TODO : when should we show that ? -->
+</menu>

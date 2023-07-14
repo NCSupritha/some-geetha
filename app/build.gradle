@@ -1,0 +1,122 @@
+plugins {
+    id 'kotlin-android'
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "v.blade"
+        minSdk 21
+        targetSdk 33
+        versionCode 30
+        versionName "2.2.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../blade-keystore.jks")
+            keyAlias "blade-release"
+            if (project.hasProperty("releaseStorePassword"))
+                storePassword project.getProperty("releaseStorePassword")
+            if (project.hasProperty("releaseKeyPassword"))
+                keyPassword project.getProperty("releaseKeyPassword")
+        }
+    }
+
+    buildTypes {
+        release {
+            buildConfigField 'String', 'SPOTIFY_CLIENT_ID', '\"2f95bc7168584e7aa67697418a684bae\"'
+            buildConfigField 'String', 'SPOTIFY_CLIENT_SECRET', '\"3166d3b40ff74582b03cb23d6701c297\"'
+
+            buildConfigField 'String', 'DEEZER_CLIENT_ID', '\"172365\"'
+            buildConfigField 'String', 'DEEZER_CLIENT_SECRET', '\"fb0bec7ccc063dab0417eb7b0d847f34\"'
+
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            /* Note : these are MY Spotify debug app settings, you should change that if you want debug builds to work with Spotify
+            * Later, if more people work on the project, those 2 variables should be passed via command-line for debug builds */
+            buildConfigField 'String', 'SPOTIFY_CLIENT_ID', '\"048adc76814146e7bb049d89813bd6e0\"'
+            buildConfigField 'String', 'SPOTIFY_CLIENT_SECRET', '\"854982b95dc04100a2009ebb8a8df758\"'
+
+            buildConfigField 'String', 'DEEZER_CLIENT_ID', '\"\"'
+            buildConfigField 'String', 'DEEZER_CLIENT_SECRET', '\"\"'
+
+            debuggable true
+        }
+    }
+    compileOptions {
+        sourceCompatibility sourceCompatibility
+        targetCompatibility targetCompatibility
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    packagingOptions {
+        resources {
+            excludes += ['log4j2.xml', 'META-INF/DEPENDENCIES']
+        }
+    }
+    buildToolsVersion '33.0.0'
+    namespace 'v.blade'
+}
+
+dependencies {
+    /* stdlib */
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-common:1.8.10'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.10'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.10'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10'
+
+    /* AndroidX (Jetpack) : compat libraries, and Material */
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+    implementation 'androidx.media:media:1.6.0'
+
+    /* Image loading : Picasso */
+    implementation 'com.squareup.picasso:picasso:2.8'
+
+    /* Spotify : librespot + auth (+ retrofit) */
+    /*implementation('xyz.gianlu.librespot:librespot-player:1.6.2:thin') {
+        exclude group: 'xyz.gianlu.librespot', module: 'librespot-sink'
+        exclude group: 'com.lmax', module: 'disruptor'
+        exclude group: 'org.apache.logging.log4j'
+    }*/
+    implementation files('libs/librespot-player-1.6.4-20230517.074612-1-thin.jar')
+    implementation files('libs/librespot-lib-1.6.4-20230517.074612-1.jar')
+    implementation files('libs/librespot-sink-api-1.6.4-20230517.074612-1.jar')
+    implementation files('libs/librespot-dacp-1.6.4-20230517.074612-1.jar')
+    implementation files('libs/librespot-decoder-api-1.6.4-20230517.074612-1.jar')
+    implementation 'org.jcraft:jorbis:0.0.17'
+    implementation 'com.badlogicgames.jlayer:jlayer:1.0.2-gdx'
+    implementation 'com.google.protobuf:protobuf-java:3.23.0'
+    implementation 'commons-net:commons-net:3.8.0'
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    implementation 'uk.uuid.slf4j:slf4j-android:1.7.30-0' //Needed to log librespot-player
+
+    implementation 'com.spotify.android:auth:1.2.6'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.5.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-web:3.5.1'
+}
