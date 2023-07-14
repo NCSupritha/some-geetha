@@ -1,15 +1,15 @@
 # Blade Player
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/vhaudiquet/BladePlayer?style=flat-square)
-![license](https://img.shields.io/github/license/vhaudiquet/BladePlayer?style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/vhaudiquet/BladePlayer?style=flat-square)
-![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/vhaudiquet/BladePlayer/latest?style=flat-square)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Somegeetha?style=flat-square)
+![license](https://img.shields.io/github/license/Somegeetha?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/Somegeetha?style=flat-square)
+![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/Somegeetha/latest?style=flat-square)
 
 <!-- Logo -->
 
-Blade is an open source music player for Android, allowing you to play music from multiple
+Somegeetha is an open source music player for Android, allowing you to play music from multiple
 services : files on your phone, [Spotify], and more.
 
-Blade is available on [Google Play], or [here on GitHub].
+Somegeetha is available on [Google Play], or [here on GitHub].
 It seems to also be on [IzzySoft F-Droid], and to stay up to date there.
 
 Other repos like ~~[Aptoide]~~ or even ~~[ApkPure]~~, ~~[ApkCombo]~~ are not recommended because
@@ -17,8 +17,8 @@ they don't seem
 to stay up to date fast, and i can't check if they modified the `apk` before publishing it.
 
 <div align="center" style="text-align: center;">
-  <img src="https://valou3433.fr/0.png" width="350" style="max-width: 350;"/>
-  <img src="https://valou3433.fr/blade1.png" width="350" style="max-width: 350;"/>
+  <img src="https://valou3433.fr/Somegeetha0.png" width="350" style="max-width: 350;"/>
+  <img src="https://valou3433.fr/Somegeetha1.png" width="350" style="max-width: 350;"/>
 </div>
 
 ## Feature overview
