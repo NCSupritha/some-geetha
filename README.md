@@ -1,4 +1,4 @@
-# Blade Player
+#Somegeetha
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Somegeetha?style=flat-square)
 ![license](https://img.shields.io/github/license/Somegeetha?style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Somegeetha?style=flat-square)
