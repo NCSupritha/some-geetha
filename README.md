@@ -23,7 +23,7 @@ to stay up to date fast, and i can't check if they modified the `apk` before pub
 
 ## Feature overview
 
-Somegetha is developed by me ([@vhaudiquet]) alone, so the project cannot be tested on many
+Somegetha is developed by my team, so the project cannot be tested on many
 devices and scenarios ; if you find an issue, open one here.
 
 - The app will open on your library, categorized as Artists, Albums, Songs, and Playlists (available
